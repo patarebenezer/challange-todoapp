@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <title>To Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="mx-3 lg:mx-[50px] xl:mx-[150px] my-4">
+      <h1 class="text-center text-2xl font-bold p-3 my-7 hover:text-blue-500 hover:underline cursor-pointer" onclick="resetPage()">To Do list App</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-3 mx-4 gap-5 justify-evenly items-center">
+        <div class="">
+            <input type="text" name="search" id="search" placeholder="Search" class="w-11/12 search p-2 px-4 mx-5 border rounded-md" onkeyup="handleSearch()" autofocus>
+        </div>
+        <div class="text-right sm:text-center">
+            <select name="page" id="page" class="border w-11/12 lg:w-1/5 mx-4 rounded-md pr-0 pl-1 py-2 " onchange="limitValue()">
+                <option value="10" selected>10</option>
+                <option value="19">20</option>
+                <option value="28">30</option>
+                <option value="40">40</option>
+                <option value="200">All</option>
+            </select>
+        </div>
+        <div class="w-11/12 mx-4 mr-4 py-2 px-8 rounded-md border flex justify-between">
+            <p class="text-blue-500 font-light cursor-pointer hover:underline" onclick="handlePrev()">
+              Prev
+            </p>
+            <p id="number" class="cursor-none">Number Page</p>
+            <p class="text-blue-500 cursor-pointer font-light hover:underline" onclick="handleNext()">
+              Next
+            </p>
+          </div>
+      </div>
+
+      <div id="data" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8"></div>
+      
+    </div>
+  </body>
+</html>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./index.js"></script>
